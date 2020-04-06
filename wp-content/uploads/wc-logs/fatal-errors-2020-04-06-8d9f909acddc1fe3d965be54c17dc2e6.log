@@ -1,0 +1,38 @@
+2020-04-06T12:57:17+00:00 CRITICAL syntax error, unexpected ''timezone'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' w C:\wamp64\www\Endokrynologia\wp-content\themes\Karton\page.php w linii 8
+
+2020-04-06T12:58:05+00:00 CRITICAL syntax error, unexpected ''meetingTopic'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' w C:\wamp64\www\Endokrynologia\wp-content\themes\Karton\page.php w linii 6
+
+2020-04-06T12:58:20+00:00 CRITICAL Uncaught Error: Call to undefined function createAMeeting() in C:\wamp64\www\Endokrynologia\wp-content\themes\Karton\page.php:17
+Stack trace:
+#0 C:\wamp64\www\Endokrynologia\wp-includes\template-loader.php(78): include()
+#1 C:\wamp64\www\Endokrynologia\wp-blog-header.php(19): require_once('C:\\wamp64\\www\\E...')
+#2 C:\wamp64\www\Endokrynologia\index.php(17): require('C:\\wamp64\\www\\E...')
+#3 {main}
+  thrown w C:\wamp64\www\Endokrynologia\wp-content\themes\Karton\page.php w linii 17
+
+2020-04-06T12:58:21+00:00 CRITICAL Uncaught Error: Call to undefined function createAMeeting() in C:\wamp64\www\Endokrynologia\wp-content\themes\Karton\page.php:17
+Stack trace:
+#0 C:\wamp64\www\Endokrynologia\wp-content\themes\Karton\index.php(2): include()
+#1 C:\wamp64\www\Endokrynologia\wp-includes\template-loader.php(78): include('C:\\wamp64\\www\\E...')
+#2 C:\wamp64\www\Endokrynologia\wp-blog-header.php(19): require_once('C:\\wamp64\\www\\E...')
+#3 C:\wamp64\www\Endokrynologia\index.php(17): require('C:\\wamp64\\www\\E...')
+#4 {main}
+  thrown w C:\wamp64\www\Endokrynologia\wp-content\themes\Karton\page.php w linii 17
+
+2020-04-06T13:00:53+00:00 CRITICAL Uncaught Error: Call to undefined function createAMeeting() in C:\wamp64\www\Endokrynologia\wp-content\themes\Karton\page.php:17
+Stack trace:
+#0 C:\wamp64\www\Endokrynologia\wp-includes\template-loader.php(78): include()
+#1 C:\wamp64\www\Endokrynologia\wp-blog-header.php(19): require_once('C:\\wamp64\\www\\E...')
+#2 C:\wamp64\www\Endokrynologia\index.php(17): require('C:\\wamp64\\www\\E...')
+#3 {main}
+  thrown w C:\wamp64\www\Endokrynologia\wp-content\themes\Karton\page.php w linii 17
+
+2020-04-06T13:00:54+00:00 CRITICAL Uncaught Error: Call to undefined function createAMeeting() in C:\wamp64\www\Endokrynologia\wp-content\themes\Karton\page.php:17
+Stack trace:
+#0 C:\wamp64\www\Endokrynologia\wp-content\themes\Karton\index.php(2): include()
+#1 C:\wamp64\www\Endokrynologia\wp-includes\template-loader.php(78): include('C:\\wamp64\\www\\E...')
+#2 C:\wamp64\www\Endokrynologia\wp-blog-header.php(19): require_once('C:\\wamp64\\www\\E...')
+#3 C:\wamp64\www\Endokrynologia\index.php(17): require('C:\\wamp64\\www\\E...')
+#4 {main}
+  thrown w C:\wamp64\www\Endokrynologia\wp-content\themes\Karton\page.php w linii 17
+

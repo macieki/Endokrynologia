@@ -1,0 +1,1202 @@
+//@import "../sass_bulma/utilities/initial-variables";
+//@import "../sass_bulma/utilities/functions";
+
+
+
+
+
+//@import "../bulma";
+
+@import "../sass/_all";
+$font: "Montserrat";
+$link: #47ffcd;
+$darklink: #00e4a6;
+$color: #253b80;
+$silver: #ddd;
+$gray: #7f7f7f;
+$white: white;
+
+@include mobile{
+	p{
+		line-height: initial;
+	}
+}
+a, label, caption, h1, h2, h3, h4, h5, h6, body, div, p, ul, li, nav, main, footer, header, textarea{	
+	font-family: $font;
+	font-size: 20px;
+	font-weight: 300;
+	color: $color;
+	text-decoration: none;
+	line-height: 1;
+}
+a{
+	font-size: 18px;
+	color: $darklink;
+}
+main{
+	text-align:center;
+	width: 100%;
+	height: 100%;
+}
+body, html{
+	width: 100%;
+	height: 100%;
+	background-color: $white;
+}
+.clearfix{
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+.only-touch{
+	@include desktop{
+		display: none!important;
+	}
+}
+.only-desktop{
+	@include touch{
+		display: none!important;
+	}
+}
+.container{
+	width: 100%;
+	max-width: 1408px;
+	height: 100%;
+	margin: 0 auto;
+	padding-left:15px;
+	padding-right:15px;
+
+}
+main > .container{
+	@include touch{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+nav{
+	z-index: 999;
+	position: relative;
+	box-shadow: 0px 5px 20px rgba(0,0,0,0.08);
+	@include mobile{
+		height: 60px;
+		position: fixed;
+	}
+	.ghost-bar{
+		display: none;
+	}
+	@include mobile{
+		position: fixed;
+		z-index: 9;
+		.ghost-bar{
+			display: block;
+			position: fixed;
+			height: 60px;
+			width: 100%;
+			top: 0;
+			z-index: 1;
+			background: #fff;
+		}
+	}
+	width: 100%;
+	background: $white;
+	height: 100px;
+	.container{
+		width: 100%;
+		max-width: 1408px;
+		height: 100%;
+		margin: 0 auto;
+	}
+	figure{
+		img{
+			object-fit: contain;
+		}
+	}
+	.menu-group{
+		@include mobile{
+			position: fixed;
+			top:-100%;
+			left: 0;
+			transition: all .3s;
+			background: #fff;
+			height: calc(100% - 60px);
+			float: none;
+			width: 100%;
+			opacity: 0;
+			border-top: 1px solid #eee;
+			&.active{
+				display: flex;
+				opacity: 1;
+				height: calc(100% - 60px);
+				top: 60px;	
+				left: 0;
+				align-items: center;
+			}
+		}
+
+		display: inline-block;
+		float: right;
+		ul{
+			@include mobile{
+				height: auto;
+				width: 100%;
+			}
+			@include tablet{
+				height: 100%;
+				width: 100%;
+			}
+		}
+		height: 100%;
+		li{
+			@include mobile{
+				height: initial;
+				display: block;
+				padding: 30px;
+			}
+			height: 100%;
+			cursor: pointer;
+			display: inline-flex;
+			flex-direction: column;
+			justify-content: center;
+			text-align: center;
+			padding-left: 30px;
+			padding-right: 30px;
+			@include widescreen-only{
+				padding-left: 18px;
+				padding-right: 18px;
+			}
+			@include desktop-only{
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+			@include tablet-only{
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+			position: relative;
+			&:after{
+				content: '';
+				background-color: $white;
+				height: 0px;
+				width: 100%;
+				position: absolute;
+				bottom: 0;
+				left: 0px;
+				transition: .3s all;
+				@include mobile{
+					content: initial;
+					width: 0;
+				}
+			}
+			&:hover{
+				&:after{
+					content: '';
+					background-color: $link;
+					height: 0px;
+					@include mobile{
+						content: initial;
+						width: 0;
+					}
+				}
+			}
+			&.is-active{
+				background: $darklink;
+				a{
+					color: #fff;
+				}
+				&:after{
+					background-color: $link;
+					height: 8px;
+					@include mobile{
+						content: initial;
+						height: 0;
+					}
+				}
+			}
+			a{
+				color: $link;
+				letter-spacing: 1px;
+				font-weight: 500;
+				font-size: 18px;
+				@include tablet-only{
+					font-size: 16px;
+					letter-spacing: initial;
+				}
+			}
+			figure{
+				width: 30px;
+				margin: 0 auto;
+				img{
+					height: 24px;
+				}
+			}
+		}
+	}
+	.brand-group{
+		padding: 20px;
+		@include mobile{
+			padding: initial;
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+		@include mobile{
+			z-index: 3;
+			position: relative;
+		}
+		height: 100%;
+		justify-content: center;
+		text-align: center;
+		display: inline-flex;
+		align-items: center;
+		.logo{
+			width: 83px;
+			height: 56px;
+			@include mobile{
+				height: 42px;
+				width: 62px;
+			}
+			display: inline-block;
+		}
+		.logotyp{
+			width: 294px;
+			height: 47px;
+			display: inline-block;
+			margin-left: 20px;
+			@include tablet-only{
+				margin-left: 10px;
+			}
+			@include mobile{
+				height: 23px;
+				width: 147px;
+			}
+		}
+	}
+	.hamburger{
+		@include mobile{
+			display: flex;
+			z-index: 3;
+			position: relative;
+		}
+		@include tablet{
+			display: none;
+		}
+		float: right;
+		justify-content: center;
+		align-items: center;
+		width: 100px;
+		@include mobile{
+			width: 70px;
+		}
+		height: 100%;
+	}
+	.hamburger-icon { 
+		align-self: flex-end;
+	}
+
+	label {
+		cursor: pointer;
+	}
+
+	input[type=checkbox] + label {
+		.icon-bar {
+			display: block;
+			width: 36px;
+			height: 2px;
+			background-color: $link;
+			margin: 8px;
+			transition: all 0.2s;
+		}
+		.top-bar {
+			transform: rotate(0);
+		}
+		.middle-bar {
+			opacity: 1;
+		}
+	}
+
+	input[type=checkbox]:checked + label {
+		.top-bar {
+			transform: rotate(45deg);
+			transform-origin: 10% 10%;
+		}
+		.middle-bar {
+			opacity: 0;
+		}
+		.bottom-bar {
+			transform: rotate(-45deg);
+			transform-origin: 10% 90%;
+		}
+	}
+}
+main{
+	width: auto;
+	height: auto;
+}
+input, select, textarea, select, .select-selected{
+	background: $white;
+	border-radius: 20px;
+	box-shadow: 0px 5px 10px rgba(0,0,0,0.05);
+	transition: box-shadow .3s;
+	padding: 8px 18px;
+	height: 36px;
+	box-sizing: border-box;
+	border: 2px solid $white;
+	color: $silver;
+	font-size: 16px;
+	font-weight: 400;
+	width: 100%;
+	&:hover, &:active, &:focus{
+		box-shadow: 0px 5px 20px rgba(0,0,0,0.1);
+	}
+	&:active, &:focus{
+		border-color: $silver;
+	}
+}
+.control{
+	position: relative;
+	label{
+		position: absolute;
+		left: 18px;
+		top: 10px;
+		cursor: text;
+		color: $silver;
+		font-size: 16px;
+		font-weight: 400;
+		transition: all .3s;
+	}
+	input:focus + label, textarea:focus + label {
+		font-size: 12px;
+		top: -15px;
+	}
+}
+
+
+
+button{
+	background: $link;
+	color: $white;
+	text-align: center;
+	border-radius: 20px;
+	box-shadow: 0px 5px 10px rgba(0, 180, 235, 0.2);
+	cursor: pointer;
+	transition: box-shadow .3s;
+	padding: 5px 18px;
+	height: 36px;
+	width: auto;
+	position: relative;
+	overflow: hidden;
+	box-sizing: border-box;
+	font-size: 16px;
+	font-weight: 400;
+	width: 100%;
+	transition: all .3s;
+	&:hover{
+		background: $darklink;
+		box-shadow: 0px 5px 10px rgba(0, 180, 235, 0.3);
+	}
+	&:focus, &:active{
+		background: $link
+	}
+	&:focus:not(:active)::after {
+		animation: ripple 1s ease-out;
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 5px;
+		height: 5px;
+		background: rgba(255, 255, 255, .2);
+		opacity: 0;
+		border-radius: 100%;
+		transform: scale(1, 1) translate(-50%);
+		transform-origin: 50% 50%;
+	}
+	&.is-outlined{
+		border-color: $link;
+		color: $link;
+		box-shadow: 0px 5px 10px rgba(0,0,0,0.05);
+		background: transparent;
+		&:hover{
+			background: $link;
+			box-shadow: 0px 5px 10px rgba(0, 180, 235, 0.3);
+			color: $white;
+		}
+	}
+	&.is-ghost{
+		border-color: transparent;
+		color: $darklink;
+		background: transparent;
+		box-shadow: none;
+		&:hover, &:focus, &:active{
+			background: $silver;
+			box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+			color: $silver;
+		}
+	}
+}
+@keyframes ripple {
+	0% {
+		transform: scale(0, 0);
+		opacity: 1;
+	}
+	20% {
+		transform: scale(25, 25);
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: scale(70, 70);
+	}
+}
+
+.checkbox {
+	position: relative;
+	margin: 16px 0;
+	text-align: left;
+	&.checkbox-inline {
+		display: inline-block;
+	}
+	label {
+		cursor: pointer;
+		display: inline;
+		line-height: 28px;
+		vertical-align: top;
+		clear: both;
+		font-size: 16px;
+		color: $silver;
+		font-weight: 400;
+		padding-left: 1px;
+		&:not(:empty) {
+			padding-left: 12px;
+		}
+		
+		&:before, &:after {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		&:before {
+			// box
+			width: 28px;
+			height: 28px;
+			background: #fff;
+			border: 2px solid rgba(0, 0, 0, 0.54);
+			border-radius: 4px;
+			cursor: pointer;
+			transition: background .3s;
+		}
+		&:after {
+		}    
+	}
+	input[type="checkbox"] {
+		outline: 0;
+		visibility: hidden;
+		width: 28px;
+		margin: 0;
+		display: block;
+		float: left;
+		font-size: inherit;
+
+		&:checked {
+			+ label:before{
+				background: $blue;
+				border:none;
+			}
+			+ label:after {
+				$checkmark-size: 28px - 2 * 6px;
+				transform: translate(6px, (28px / 2) - ($checkmark-size / 2.6)) rotate(-45deg);
+				width: $checkmark-size;
+				height: $checkmark-size / 2;
+				border: 3px solid #fff;
+				border-top-style: none;
+				border-right-style: none;
+			} 
+		}
+	}
+}
+.switch{
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+	border-radius:25px;
+	box-shadow: 0 5px 10px rgba(0, 150, 250, 0.2);
+	transition: all .3s;
+	&:hover, &:active{
+		box-shadow: 0 5px 10px rgba(0, 150, 250, 0.4);
+		opacity: 1;
+	}
+	.axe{
+		border-radius:25px;
+		width: 60px;
+		height: 32px;
+		background: $blue;
+		display: block;
+
+		transition: .3s all;
+	}
+	.handle{
+		width: 24px;
+		height: 24px;
+		border-radius: 25px;
+		background: #0077AA;
+		display: block;
+		position: absolute;
+		top: 4px;
+		right: 4px;
+		transition: .3s all;
+	}
+	&.off{
+		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+		&:hover, &:active{
+			box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+		}
+		.axe{
+			background: #ccc;
+		}
+		.handle{
+			right: 32px;
+			background: #999;
+		}
+	}
+}
+
+.columns{
+	display: flex;
+	@include touch{
+		display: block;
+		height: auto;
+		&.flex-tablet{
+			@include tablet-only{
+				display: flex;
+			}
+		}
+	}
+	.column{
+		display: block;
+		float: left;
+		display: block;
+		flex-basis: 0;
+		flex-grow: 1;
+		flex-shrink: 1;
+		padding: 40px;
+		@include touch{
+			float: none;
+			padding: 10px;
+		}
+	}
+}
+.page-container {
+	position: relative;
+	min-height: 100vh;
+}
+
+main {
+	padding-bottom: 100px;    /* Footer height */
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 100px;            /* Footer height */
+}
+header{
+	width: 100%;
+	height: 16px;
+	background-color: $link;
+}
+.gora{
+	> *{
+		margin-top: 16px;
+	}
+	figure.face{
+		margin-top: 130px;
+		img{
+			box-shadow: 0px 5px 20px rgba(0,0,0,0.18);
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			border: 5px solid $color;
+		}
+	}
+	h1{
+		margin-top: 32px;
+		color: $color;
+		font-weight: 700;
+		font-size: 36px;
+	}
+	p.rola{
+		font-size: 36px;
+		color: $color;
+	}
+	p.torun{
+		color: $gray;
+		font-size: 24px;
+	}
+}
+.umow{
+	margin-top: 48px;
+	a.button{
+		background-color: #fff;
+		color: $color;
+		text-align: center;
+		border-radius: 12px;
+		cursor: pointer;
+		transition: box-shadow .3s;
+		padding: 20px 48px;
+		@include mobile{
+			padding: 20px 20px;
+		}
+		figure{
+			margin-right: 4px;
+			width: 32px;
+			height: 32px;
+			display: inline-block;
+			position: relative;
+			top: 8px;
+			left: -8px;
+			@include mobile{
+				width: 16px;
+				height: 16px;
+				top: 2px;
+				margin-right: 0;
+			}
+			&.krzyz2{
+				display: none;
+			}
+		}
+		height: 36px;
+		width: auto;
+		position: relative;
+		overflow: hidden;
+		box-sizing: border-box;
+		border: 4px solid $link;
+		font-size: 24px;
+		font-weight: 700;
+		width: 100%;
+		transition: all .3s;
+		&:hover{
+			background: $darklink;
+			box-shadow: 0px 5px 10px rgba(0, 255, 235, 0.3);
+			color: #fff;
+			border: 4px solid $darklink;
+				.krzyz2{
+					display: inline-block;
+				}
+				.krzyz1{
+					display: none;
+				}
+		}
+		&:focus, &:active{
+			background: $link
+		}
+		&:focus:not(:active)::after {
+			animation: ripple 1s ease-out;
+		}
+		&:after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 5px;
+			height: 5px;
+			background: rgba(255, 255, 255, .2);
+			opacity: 0;
+			border-radius: 100%;
+			transform: scale(1, 1) translate(-50%);
+			transform-origin: 50% 50%;
+		}
+		&.is-outlined{
+			border-color: $link;
+			color: $link;
+			box-shadow: 0px 5px 10px rgba(0,0,0,0.05);
+			background: transparent;
+			&:hover{
+				background: $link;
+				box-shadow: 0px 5px 10px rgba(0, 180, 235, 0.3);
+				color: $white;
+			}
+		}
+		&.is-ghost{
+			border-color: transparent;
+			color: $darklink;
+			background: transparent;
+			box-shadow: none;
+			&:hover, &:focus, &:active{
+				background: $silver;
+				box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+				color: $silver;
+			}
+		}
+		@include mobile{
+			font-size: 18px;
+		}
+	}
+}
+.jak{
+	margin-top: 60px;
+	h2{
+		display: inline-block;
+		padding-bottom: 8px;
+		font-weight: 700;
+		color: $color;
+		border-bottom: 5px solid $link;
+		margin-bottom: 40px;
+	}
+	figure{
+		width: 24px;
+		height: 24px;
+		margin: 0 auto;
+		//float: left;
+		display: inline-block;
+	}
+	.img-container{
+		&:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+		&.dwa{
+			figure:first-child{
+				margin-right:10px;
+				width: 32px;
+				height: 24px;
+
+			}
+			figure:last-child{
+				margin-left: 10px;
+			}
+		}
+	}
+	h3{
+		font-weight: 700;
+		color: $color;
+		font-size: 18px;
+		margin-bottom: 16px;
+		margin-top: 16px;
+	}
+	p{
+		color: $gray;
+		text-align: left;
+		line-height: 1.2;
+		@include touch{
+			margin-left: auto;
+			margin-right: auto;
+			text-align: center;
+			max-width: 600px;
+		}
+		font-size: 18px;
+		margin-top: 16px;
+		&:nth-child(3){
+			padding-top:16px;
+			border-top: 2px solid #eee;
+			@include touch{
+				border: none;
+				padding-top: 8px;
+			}
+		}
+		&:last-child{
+			@include touch{
+				margin-bottom: 24px;
+			}
+		}
+	}
+	.column:nth-child(odd){
+		flex-grow: 5;
+	}
+	.column:nth-child(even){
+		padding: initial;
+		background-image: url("../images/strzalka.svg");
+		background-repeat: no-repeat;
+		background-position: 0px 72px;
+		@include touch{
+			height: 50px;
+			background: none;
+			position: relative;
+			overflow: hidden;
+			z-index: 0;
+			margin-bottom: 24px;
+			&::before {
+				content: "";
+				position: absolute;
+				width: 50px;
+				height: 50px;
+				top: 0;
+				left: calc(50% - 25px);
+				z-index: 3;
+				background-image: url("../images/strzalka.svg");
+				transform: rotate(90deg);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: 80%;
+
+			}
+
+		}
+	}
+}
+.dot {
+	height: 15px;
+	width: 15px;
+	background-color: $link;
+	border-radius: 50%;
+	display: inline-block;
+	margin-bottom: 10px;
+}
+footer p, footer p a{
+	font-size: 16px;
+}
+footer .ad{
+	padding-bottom: 20px;
+	padding-top: 31px;
+}
+.daty span{
+	padding: 10px;
+	border-radius: 15px;
+	background: #eaeaea;
+	margin:5px;
+	display: inline-block;
+	font-size: 14px;
+	color: $gray;
+	display: inline-block;
+}
+.daty p{
+	margin: 0;
+	font-size: 14px;
+	color: $gray;
+	margin-bottom: 10px;
+}
+.daty-container{
+	padding-top: 20px;
+
+}
+.najblizsze{
+	padding-top: 100px;
+}
+.daty{
+	display: inline-block;
+	margin: 0 auto;
+		border-radius: 10px;
+	border: 5px solid #ddd;
+	padding: 12px;
+	clear: both;
+	max-width: 460px;
+}
+a.pokaz{
+	padding-top: 20px;
+	display: inline-block;
+	padding-bottom: 20px;
+}
+.szara-strefa{
+	background-color: #eee;
+	max-width: 100%;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	h2{
+		display: inline-block;
+		padding-bottom: 8px;
+		font-weight: 700;
+		color: $color;
+		border-bottom: 5px solid $link;
+		margin-bottom: 40px;
+	}
+}
+body .kalendarz{
+	max-width: 460px;
+	@include mobile{
+		max-width: 100%;
+	}
+	margin: 0 auto;
+	table.booked-calendar{
+		overflow: hidden;
+		border-radius: 15px!important;
+		//border: 10px solid green!important;
+		tr{
+			//border-radius: 15px!important;
+		}
+		thead{
+			//border-radius: 15px!important;
+			text-transform: none;
+			th{
+				border: none;
+				//border-radius: 15px!important;
+				background-color: $color!important;
+				color: #fff;
+			}
+			tr.days{
+				th{
+
+				}
+			}
+		}
+		tbody{
+			tr{
+				td{
+					span.tooltipster.tooltipstered{
+						font-weight:700;
+						color: #00dd88;
+						&:hover{
+							color: #fff;
+							//background: $link;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.tooltipster-content{
+	font-family: 'Montserrat'!important;
+	font-size: 16px !important;
+}
+body #booked-profile-page input[type="submit"], body #booked-profile-page button, body .booked-list-view input[type="submit"], body .booked-list-view button, body table.booked-calendar input[type="submit"], body table.booked-calendar button, body .booked-modal input[type="submit"], body .booked-modal button{
+	font-size: 14px;
+}
+.timeslot-time{
+	.spots-available{
+		display: none!important;
+	}
+}
+body #booked-profile-page input[type="submit"].button-primary, body table.booked-calendar input[type="submit"].button-primary, body .booked-list-view button.button, body .booked-list-view input[type="submit"].button-primary, body .booked-list-view button.button, body .booked-list-view input[type="submit"].button-primary, body .booked-modal input[type="submit"].button-primary, body #booked-profile-page .appt-block .google-cal-button > a, body table.booked-calendar .booked-appt-list .timeslot .timeslot-people button, body .booked-list-view a.booked_list_date_picker_trigger.booked-dp-active, body .booked-list-view a.booked_list_date_picker_trigger.booked-dp-active:hover{
+	background: $darklink!important;
+	border-color: $darklink!important;
+	&:hover{
+		background: $link!important;
+		border-color: $link!important;
+	}
+}
+body .booked-calendar-wrap .booked-appt-list .timeslot:hover{
+	background: inherit;
+}
+body .booked-modal .bm-window p small{
+	text-transform: initial;
+	font-size: 18px;
+}
+body .booked-modal .bm-window p.booked-title-bar{
+	background-color: $color;
+}
+#newAppointmentForm{
+	p{
+		font-size: 16px;
+	}
+	.cancel.button{
+		display: none;
+	}
+}
+body .booked-form .booked-appointments{
+	border-radius: 10px;
+	border: 5px solid #ddd;
+	padding: 12px;
+	box-shadow: none;
+}
+.booked-appointment-details p.calendar-name{
+	display: none;
+}
+#newAppointmentForm p{
+	font-size: 18px;
+}
+body .booked-calendar-wrap .booked-appt-list .timeslot .timeslot-time{
+	position: relative;
+	top: 12px;
+}
+#submit-request-appointment{
+	padding: 10px 24px;
+	font-size: 20px;
+	margin-bottom: 20px;
+	font-weight: 700;
+	font-family: 'Montserrat';
+	cursor: pointer;
+	transition: .3s all;
+}
+body .booked-modal .bm-window .booked-scrollable, body .booked-modal .bm-window{
+	border-radius: 20px 20px 15px 15px;
+}
+body .booked-modal .bm-window p.booked-title-bar{
+	border-radius: 15px 15px 0px 0px;
+}
+body .booked-modal .bm-overlay{
+	background: rgba(25,25,25,0.65);
+}
+.bm-window{
+	opacity: 0;
+	display: none!important;
+}
+.body .booked-modal .bm-window .booked-scrollable, body .booked-modal .bm-window{
+	display: none;
+}
+.szara-strefa{
+	transition: .3s all;
+	transform: scaleY(0.01);
+	height: 0;
+	opacity: 0;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	&.clicked{
+		padding-top: 50px;
+		padding-bottom: 50px;
+		height: initial;
+		opacity: 1;
+		transform: scaleY(1);
+	}
+}
+a.umawianie{
+	cursor: pointer;
+}
+.woocommerce-form-coupon-toggle{
+	display: none;
+}
+.woocommerce #customer_details.col2-set .col-1, .woocommerce-page #customer_details.col2-set .col-1{
+	width: 100%;
+}
+main.koszyk{
+	.gora{
+		text-align: left;
+		h1{
+			margin-top: 10px;
+		}
+	}
+	.gora .rola, .gora h1{
+		font-size: 24px;
+		display: inline-block;
+		text-align: left;
+	}
+	.woocommerce-billing-fields{
+		h3{
+			margin-top: 50px;
+			margin-bottom: 20px;
+			font-weight: 700;
+			font-size: 36px;
+		}
+	}
+}
+.woocommerce{
+	max-width: 640px;
+	margin: 0 auto;
+	label{
+		text-align: left;
+		font-size: 16px;
+	}
+	.input-text {
+		border: 2px solid $silver;
+		height: 42px;
+		&:active, &:focus{
+			border: 2px solid $color;
+		}
+	}
+	#order_review{
+		margin-top: 30px;
+	}
+	#order_review_heading{
+		display: none;
+	}
+	.shop_table.woocommerce-checkout-review-order-table .cart_item td.product-name{
+		>* {
+			display: none;
+		}
+		.booked-wc-checkout-section:nth-child(2){
+			display: initial;
+			font-weight: 700!important;
+			font-size: 24px;
+			small{
+				font-weight: 700!important;
+			}
+		}
+
+	}
+	.shop_table.woocommerce-checkout-review-order-table{
+		tfoot{
+			display: none;
+		}
+		thead{
+			display: none;
+		}
+		.woocommerce-Price-amount.amount{
+			font-weight: 700;
+		}
+	}
+	.woocommerce table.shop_table td{
+		border: none!important;
+	}
+	.shop_table.woocommerce-checkout-review-order-table{
+		border: none;
+	}
+	.woocommerce-checkout-payment{
+		input{
+			width: auto;
+		}
+		label{
+			position: relative;
+			top: -10px;
+			font-size: 18px;
+		}
+		.payment_box p{
+			font-size: 14px;
+			color: $gray;
+		}
+	}
+	#add_payment_method #payment, .woocommerce-cart #payment, .woocommerce-checkout #payment{
+		background: #fff;
+	}
+	.payment_box.payment_method_paypal, .payment_box.payment_method_przelewy24{
+		border-radius: 15px!important;
+	}
+}
+.woocommerce-privacy-policy-text p{
+	font-size: 14px!important;
+	color: $gray!important;
+}
+.woocommerce-privacy-policy-text a{
+	font-size: 14px!important;
+}
+.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt{
+	background: $darklink;
+	font-family: "Montserrat";
+	color: $white;
+	text-align: center;
+	border-radius: 20px;
+	box-shadow: 0px 5px 10px rgba(0, 180, 235, 0.2);
+	cursor: pointer;
+	transition: box-shadow .3s;
+	padding: 12px 18px;
+	height: 48px;
+	margin-top: 20px;
+	width: auto;
+	position: relative;
+	overflow: hidden;
+	box-sizing: border-box;
+	font-size: 24px;
+	font-weight: 700;
+	width: 100%;
+	transition: all .3s;
+	&:hover{
+		background: $darklink;
+		box-shadow: 0px 5px 10px rgba(0, 180, 235, 0.3);
+	}
+	&:focus, &:active{
+		background: $link
+	}
+	&:focus:not(:active)::after {
+		animation: ripple 1s ease-out;
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 5px;
+		height: 5px;
+		background: rgba(255, 255, 255, .2);
+		opacity: 0;
+		border-radius: 100%;
+		transform: scale(1, 1) translate(-50%);
+		transform-origin: 50% 50%;
+	}
+
+}
+#add_payment_method #payment ul.payment_methods, .woocommerce-cart #payment ul.payment_methods, .woocommerce-checkout #payment ul.payment_methods{
+		border-bottom: none;
+	}
