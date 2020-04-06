@@ -1,26 +1,5 @@
 <?php get_header(); ?>
-<?php
 
-$meet = array(
-	'userId'                    => "QO0lByLFTO--BAnI1TBHjA",
-	'meetingTopic'              => "API Test",
-	'start_date'                => "2020-04-30T22:00:00Z",
-	'timezone'                  => "(GMT+2:00) Warsaw ",
-	'duration'                  => 20,
-	'join_before_host'          => true,
-	'option_host_video'         => false,
-	'option_participants_video' => true,
-	'option_mute_participants'  => false,
-	'option_auto_recording'     => "none",
-	'alternative_host_ids'      => ""
-);
-
-$obj = new Zoom_Video_Conferencing_Api();
-echo $obj->createAMeeting($meet);
-
-
-
-?>
 <main>
 	<div class="container">
 		<div class="gora">
